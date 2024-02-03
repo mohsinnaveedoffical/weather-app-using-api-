@@ -26,7 +26,7 @@ int main() {
 	cout << "Enter the city name : ";
 	getline(cin, city);
 	http_client client(U("https://api.openweathermap.org/data/2.5"));
-	uri_builder builder(U("/weather","wind"));
+	uri_builder builder(U("/weather"));
 	builder.append_query(U("q"), utility::conversions::to_string_t(city));
 	builder.append_query(U("appid"), U("105245613c8acdf0331789027b600ee9"));
 	http_request request(methods::GET);
